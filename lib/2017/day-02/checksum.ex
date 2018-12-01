@@ -1,23 +1,39 @@
-defmodule AoC2017.Day2.Checksum do
+defmodule AoC2017.Day02.Checksum do
+  use AoC, year: 2017, day: 2
+
+  @doc """
+  iex>part_one()
+  44887
+  """
   def part_one() do
     read_spreadsheet()
     |> checksum(&max_min_diff/1)
   end
 
+  @doc """
+  iex>part_two()
+  242
+  """
   def part_two() do
     read_spreadsheet()
     |> checksum(&evenly_divisible/1)
   end
 
   defp read_spreadsheet() do
-    "#{__DIR__}/input.txt"
-    |> File.read!()
-    |> String.split("\n", trim: true)
-    |> Enum.map(fn line ->
-      line
-      |> String.split("\t", trim: true)
-      |> Enum.map(&String.to_integer/1)
-    end)
+    stream()
+    |> Stream.map(&reduce_line/1)
+  end
+
+  defp reduce_line(line) do
+    Stream.resource(
+      fn -> {String.codepoints(line), ""} end,
+      fn
+        {[char | rest], acc} when char in ["\n", "\t"] -> {[String.to_integer(acc)], {rest, ""}}
+        {[char | rest], acc} -> {[], {rest, acc <> char}}
+        {[], _acc} -> {:halt, []}
+      end,
+      fn _ -> nil end
+    )
   end
 
   def checksum(spreadsheet, row_fun) do
@@ -36,6 +52,7 @@ defmodule AoC2017.Day2.Checksum do
 
   defp evenly_divisible(row) do
     length = Enum.count(row) - 1
+
     row
     |> Enum.with_index()
     |> Enum.flat_map(fn {num, idx} ->
@@ -54,9 +71,3 @@ defmodule AoC2017.Day2.Checksum do
     |> Enum.take(length)
   end
 end
-
-AoC2017.Day2.Checksum.part_one()
-|> IO.inspect()
-
-AoC2017.Day2.Checksum.part_two()
-|> IO.inspect()
