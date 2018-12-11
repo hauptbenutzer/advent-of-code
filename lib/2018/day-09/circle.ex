@@ -1,5 +1,5 @@
-defmodule AoC2018.Day08.Circle do
-  use AoC, year: 2018, day: 8
+defmodule AoC2018.Day09.Circle do
+  use AoC, year: 2018, day: 9
 
 
   @doc """
