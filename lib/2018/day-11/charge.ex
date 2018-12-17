@@ -12,10 +12,10 @@ defmodule AoC2018.Day11.Charge do
     |> Enum.max_by(fn {_, power} -> power end)
   end
 
-  @doc """
-  iex>best_square(5468)
-  {:ok, {15, {{90, 101}, 119.0}}}
-  """
+  # @doc """
+  # iex>best_square(5468)
+  # {:ok, {15, {{90, 101}, 119.0}}}
+  # """
   def best_square(serial_number) do
     cells =
       Matrex.new(@grid_size, @grid_size, fn row, col ->

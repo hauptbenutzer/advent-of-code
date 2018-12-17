@@ -1,0 +1,27 @@
+strict digraph {
+    "[\"tknk\", 41]"
+    "[\"padx\", 45]"
+    "[\"xhth\", 57]"
+    "[\"pbga\", 66]"
+    "[\"gyxo\", 61]"
+    "[\"ebii\", 61]"
+    "[\"jptl\", 61]"
+    "[\"cntj\", 57]"
+    "[\"ugml\", 68]"
+    "[\"ktlj\", 57]"
+    "[\"havc\", 66]"
+    "[\"fwft\", 72]"
+    "[\"qoyq\", 66]"
+    "[\"tknk\", 41]" -> "[\"padx\", 45]" [weight=1]
+    "[\"tknk\", 41]" -> "[\"ugml\", 68]" [weight=1]
+    "[\"tknk\", 41]" -> "[\"fwft\", 72]" [weight=1]
+    "[\"padx\", 45]" -> "[\"pbga\", 66]" [weight=1]
+    "[\"padx\", 45]" -> "[\"havc\", 66]" [weight=1]
+    "[\"padx\", 45]" -> "[\"qoyq\", 66]" [weight=1]
+    "[\"ugml\", 68]" -> "[\"gyxo\", 61]" [weight=1]
+    "[\"ugml\", 68]" -> "[\"ebii\", 61]" [weight=1]
+    "[\"ugml\", 68]" -> "[\"jptl\", 61]" [weight=1]
+    "[\"fwft\", 72]" -> "[\"xhth\", 57]" [weight=1]
+    "[\"fwft\", 72]" -> "[\"cntj\", 57]" [weight=1]
+    "[\"fwft\", 72]" -> "[\"ktlj\", 57]" [weight=1]
+}

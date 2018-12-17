@@ -22,7 +22,9 @@ defmodule AoC.MixProject do
   defp deps do
     [
       {:benchee, "~> 0.13.2", only: :dev},
-      {:matrex, "~> 0.6"}
+      {:matrex, "~> 0.6"},
+      {:libgraph, "~> 0.13.3"},
+      {:nimble_parsec, "~> 0.5.0"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"},
     ]
