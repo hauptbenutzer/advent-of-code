@@ -105,7 +105,7 @@ defmodule AoC2018.Day16.Op do
     |> Enum.into(%{}, fn {val, idx} -> {idx, val} end)
   end
 
-  defp run_op([a, b, c], op, registers) do
+  def run_op([a, b, c], op, registers) do
     {target, result} = op.(a, b, c, registers)
     %{registers | target => result}
   end
