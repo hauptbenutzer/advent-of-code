@@ -8,7 +8,11 @@ defmodule AoC do
     day = Keyword.fetch!(opts, :day)
 
     quote do
-      def read(file \\ "default.txt"),
+      def read(file \\ "default.txt")
+
+      def read(string: string), do: string
+
+      def read(file),
         do: unquote(__MODULE__).read(unquote(year), unquote(day), file)
 
       def stream(file \\ "default.txt"),
