@@ -55,5 +55,22 @@ defmodule AoC2017.Day03.Spiral do
     n + abs(mod(number - 1, side - 1) - n)
   end
 
+  @doc """
+  147  142  133  122   59
+  304    5    4    2   57
+  330   10    1    1   54
+  351   11   23   25   26
+  362  747  806
+
+  num(n)
+  num(0) = 1
+  num(1) = 1
+  num(2) = 2
+  num(3) = 4
+  num(4) = 5
+  """
+  def part_two() do
+  end
+
   defp mod(a, b), do: rem(rem(a, b) + b, b)
 end
